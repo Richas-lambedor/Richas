@@ -1,53 +1,32 @@
-<html lang="pt-BR">
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
-        rel="stylesheet">
-    <title>Coquete</title>
+  <!-- Tag META define metadados sobre um documento HTML. Metadados são dados (informações) sobre dados -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords" content="Gerador de senhas">
+
+  <link rel="stylesheet" href="style.css">
+  <title>Gerador de senha</title>
 </head>
-
 <body>
-    <header>Vocë encontra tudo de coquete aqui.</header>
 
-    <section class="chamada">
-        <div class="chamada-texto">
-            <h1>Fotos de hoje</h1>
-            <p>#Coquete</p>
-        </div>
+  <img class="logo" src="./assets/logo.png" alt="Gerador senha logo"/>
 
-        <div>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/gt_fAE1Eg2Q?si=EEv-tsY_b1B2OwKE"
-                title="YouTube video player" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </div>
-    </section>
+  <div class="container-input">
+    <span>Tamanho <span id="valor"></span> caracteres</span>
+    <input id="slider" class="slider" type="range" min="5" max="25" value="15"/>
 
-    <section class="categoria">
-        <h2>Fotos 2</h2>
-        <div class="categoria-videos">
-            <a href="https://www.youtube.com/watch?v=cs15QqG6Gjc">
-                <img src="https://img.youtube.com/vi/cs15QqG6Gjc/maxresdefault.jpg" />
-            </a>
-            <a href="https://www.youtube.com/watch?v=nCmIwcycUJ8">
-                <img src="https://img.youtube.com/vi/nCmIwcycUJ8/maxresdefault.jpg" />
-            </a>
-            <a href="https://www.youtube.com/watch?v=FvRmEapoHRc">
-                <img src="https://img.youtube.com/vi/FvRmEapoHRc/maxresdefault.jpg" />
-            </a>
-            <a href="https://www.youtube.com/watch?v=Ipkw_hWW-Hw">
-                <img src="https://img.youtube.com/vi/Ipkw_hWW-Hw/maxresdefault.jpg" />
-            </a>
-            <a href="https://www.youtube.com/watch?v=d4DzMNGoyis">
-                <img src="https://img.youtube.com/vi/d4DzMNGoyis/maxresdefault.jpg" />
-            </a>
-        </div>
-    </section>
+    <button id="button" class="button-cta" onclick="generatePassword()">Gerar senha</button>
+  </div>
 
+  <div id="container-password" onclick="copyPassword()" class="container-password hide">
+    <span class="title">Sua senha gerada foi:</span>
+    <span id="password"  class="password"></span>
+    <span class="tooltip">Clique na senha para copiar. 👆</span>
+  </div>
+
+  <script src="script.js"></script>
 </body>
-
 </html>
